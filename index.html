@@ -213,6 +213,20 @@
             }
         }
 
+        /* Wrapper for moving across page */
+        .moving-characters {
+            animation: moveAcrossPage 8s linear infinite;
+        }
+
+        @keyframes moveAcrossPage {
+            0% {
+                transform: translateX(-150px);
+            }
+            100% {
+                transform: translateX(450px);
+            }
+        }
+
         .dog-character {
             animation: dogDance 0.8s ease-in-out infinite;
             transform-origin: center bottom;
@@ -486,8 +500,10 @@
                         <ellipse cx="200" cy="410" rx="120" ry="15" fill="#FFB6D9" opacity="0.3"/>
                         <ellipse cx="200" cy="415" rx="100" ry="10" fill="#FFC9E0" opacity="0.4"/>
 
-                        <!-- Dog character - super cute! -->
-                        <g class="dog-character" transform="translate(120, 180)">
+                        <!-- Moving characters wrapper -->
+                        <g class="moving-characters">
+                            <!-- Dog character - super cute! -->
+                            <g class="dog-character" transform="translate(135, 165)">
                             <!-- Dog body (standing/dancing) -->
                             <ellipse cx="28" cy="60" rx="24" ry="28" fill="white" stroke="#333" stroke-width="2.5"/>
 
@@ -548,7 +564,7 @@
                         </g>
 
                         <!-- Baby character - adorable! -->
-                        <g class="baby-character" transform="translate(235, 185)">
+                        <g class="baby-character" transform="translate(210, 165)">
                             <!-- Baby body (standing/dancing) -->
                             <ellipse cx="25" cy="62" rx="22" ry="26" fill="#FFD8B8" stroke="#333" stroke-width="2.5"/>
 
@@ -558,12 +574,12 @@
 
                             <!-- Baby feet -->
                             <ellipse cx="19" cy="108" rx="7" ry="4" fill="#FFD8B8" stroke="#333" stroke-width="2"/>
-                            <ellipse cx="32" cy="108" rx="7" ry="4" fill="#FFD8B8" stroke="#333" stroke-width="2"/>
+                            <ellipse cx="1000" cy="108" rx="7" ry="4" fill="#FFD8B8" stroke="#333" stroke-width="2"/>
 
                             <!-- Diaper (cute) -->
                             <ellipse cx="25" cy="70" rx="22" ry="18" fill="white" stroke="#333" stroke-width="2.5"/>
                             <circle cx="17" cy="72" r="3" fill="#B8E6FF"/>
-                            <circle cx="33" cy="72" r="3" fill="#B8E6FF"/>
+                            <circle cx="1000" cy="72" r="3" fill="#B8E6FF"/>
                             <path d="M 10 64 Q 25 62 40 64" stroke="#B8E6FF" stroke-width="2" fill="none"/>
 
                             <!-- Baby chest/body -->
@@ -605,6 +621,7 @@
                             <text x="-8" y="12" font-size="14" fill="#FFD700">✨</text>
                             <text x="42" y="12" font-size="14" fill="#FFD700">✨</text>
                         </g>
+                        </g><!-- End moving-characters wrapper -->
                     </svg>
                 </div>
 
